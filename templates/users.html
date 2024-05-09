@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+{% block title %}User Details | Tycoon{% endblock %}
+
+{% block isActiveUserList %}active {% endblock %}
+
+{% block body %}
+
+<main id="main">
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Emp Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">Age</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Phone Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in result %}
+    <tr>
+      <th scope="row">{{i.empId}}</th>
+      <td>{{i.empFirstName}}</td>
+      <td>{{i.empLastName}}</td>
+      <td>{{i.empUserName}}</td>
+      <td>{{i.empAge}}</td>
+      <td>{{i.empDOB}}</td>
+      {% if i.empGender == "M" %}
+      <td>Male</td>
+      {% else %}
+      <td>Female</td>
+      {% endif %}
+      <td>{{i.empPhone}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
+</div>
+
+</section>
+</main>
+{% endblock %}

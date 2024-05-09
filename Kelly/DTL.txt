@@ -1,0 +1,10 @@
+{% block title %} {% endblock %}
+
+{% block isActiveHome %} {% endblock %}
+{% block isActiveAbout %} {% endblock %}
+{% block isActiveResume %} {% endblock %}
+{% block isActiveSkill %} {% endblock %}
+{% block isActivePort %} {% endblock %}
+{% block isActiveConc %} {% endblock %}
+
+{% block body %} {% endblock %}

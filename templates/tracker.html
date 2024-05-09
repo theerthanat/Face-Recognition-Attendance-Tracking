@@ -1,0 +1,78 @@
+{% extends 'base.html' %} 
+
+{% block title %}Tracker | Tycoon{% endblock %}
+
+{% block isActiveTracking %}active {% endblock %}
+{% block body %}
+<main id="main">
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Tracking Details</h2>
+      </div>
+
+
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="row mt-2">
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">EMPID</th>
+      <th scope="col">lastUpdatedBy</th>
+      <th scope="col">is_active</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in result %}
+    <tr>
+      <th scope="row">{{i.forKey}}-{{i.empId}}</th>
+      <td>{{i.lastUpdatedBy}}</td>
+      {% if i.is_active == True %}
+      <td>IN</td>
+      {% else %}
+      <td>OUT</td>
+      {% endif %}
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
+
+
+
+</div>
+</div>
+
+</section>
+</main>
+{% endblock %}
